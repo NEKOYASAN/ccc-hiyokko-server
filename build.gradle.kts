@@ -17,4 +17,5 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation("io.ktor:ktor-server-netty:${Ktor.version}")
     implementation("io.ktor:ktor-auth:${Ktor.version}")
+    implementation("io.ktor:ktor-websockets:${Ktor.version}")
 }
