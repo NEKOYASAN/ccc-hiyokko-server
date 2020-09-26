@@ -7,7 +7,7 @@ import io.ktor.auth.authenticate
 import io.ktor.auth.authentication
 import io.ktor.routing.routing
 
-fun main(args: Array<String>) : Unit = io.ktor.server.netty.EngineMain.main(args)
+fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
 @Suppress("unused") // Referenced in application.conf
 fun Application.module() {

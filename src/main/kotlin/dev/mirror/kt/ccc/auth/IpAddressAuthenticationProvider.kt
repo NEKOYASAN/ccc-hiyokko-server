@@ -11,12 +11,12 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.request.ApplicationRequest
 import io.ktor.response.respond
 
-class IpAddressAuthenticationProvider (
+class IpAddressAuthenticationProvider(
     configuration: Configuration
 ) : AuthenticationProvider(configuration) {
     val authenticationFunction = configuration.authenticationFunction
 
-    class Configuration(name: String?): AuthenticationProvider.Configuration(name) {
+    class Configuration(name: String?) : AuthenticationProvider.Configuration(name) {
         internal var authenticationFunction: AuthenticationFunction<IpAddressCredentials> = {
             throw NotImplementedError("IpAddress auth validate function is not specified. use ipAddress { validate { ... } } to fix.")
         }
@@ -44,7 +44,7 @@ fun Authentication.Configuration.ipAddress(
             else -> null
         }
 
-        if(cause != null) {
+        if (cause != null) {
             context.challenge(ipAddressAuthenticationChallengeKey, cause) {
                 call.respond(HttpStatusCode.Unauthorized, "Unknown ip address.")
                 it.complete()

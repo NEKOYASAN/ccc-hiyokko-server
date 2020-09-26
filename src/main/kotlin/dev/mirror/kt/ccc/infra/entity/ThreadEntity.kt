@@ -7,10 +7,10 @@ import org.jetbrains.exposed.dao.UUIDEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
 import java.util.UUID
 
-class ThreadEntity(id: EntityID<UUID>): UUIDEntity(id) {
-    companion object: UUIDEntityClass<ThreadEntity>(Threads)
+class ThreadEntity(id: EntityID<UUID>) : UUIDEntity(id) {
+    companion object : UUIDEntityClass<ThreadEntity>(Threads)
 
     var author by Threads.author
     var title by Threads.title
-    val posts by PostEntity referrersOn  Posts.thread
+    val posts by PostEntity referrersOn Posts.thread
 }
